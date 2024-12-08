@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Sen:wght@400..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Rethink Sans", sans-serif;
+    }
+}
+@layer components {
+    .list {
+        @apply relative after:absolute after:w-0 after:top-6 after:left-0 after:bg-black hover:after:w-full after:duration-300  cursor-pointer  after:h-[2px] font-semibold font-extendfont2;
+    }
+    .actives {
+        @apply relative after:absolute after:w-full after:top-6 after:left-0 after:bg-black after:h-[2px] font-extendfont2 font-semibold;
+    }
+    .contact {
+        @apply lg:flex items-center gap-1 font-extendfont2 font-semibold hidden sm:px-4 hover:bg-gray-100 rounded-full;
+    }
+    .minihead {
+        @apply text-xl border-b-2 my-3 font-extendfont5;
+    }
+    .forunderline {
+        @apply relative after:absolute my-4 text-xl after:top-7 after:left-0 after:bg-white after:h-[2px];
+    }
+    .footerli {
+        @apply text-xl bg-gray-900 p-2 rounded-full flex hover:bg-slate-800 items-center gap-2;
+    }
+
+    .adminlayout {
+        @apply rounded p-5 md:p-10 bg-white shadow;
+    }
+    .ant-select-selector {
+        @apply !border-none outline-none ring-0 !p-10;
+    }
+    .inputLabel {
+        @apply mb-2 font-[500] text-gray-600;
+    }
+    .ant-btn {
+        @apply !bg-blue;
+    }
+}
+@layer utilities {
+    .go {
+        top: 40rem;
+        opacity: 100%;
+        transition: 1s;
+    }
+    .up {
+        top: 0;
+        opacity: 0;
+        transition: 1s;
+    }
+}
+body,html {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)) /* #111827 */;
+    color: rgb(243 244 246 / var(--tw-text-opacity, 1))
+}
+.ant-picker-range input {
+    font-size: 15px !important;
+}
+
+.active:hover .activetop {
+    opacity: 0.5;
+    transition: ease-in-out 0.5s;
+}
+.activetop {
+    transition: ease-in-out 0.5s;
+}
+.se-menu-list .txt,
+.se-placeholder {
+    font-size: 16px !important;
+    font-family: "Rethink Sans";
+}
+
+.ant-btn-variant-solid {
+    background-color: blue !important;
+}
+.ant-select-selection-placeholder {
+    font-size: 16px !important;
+    margin-bottom: 2px;
+    font-weight: 500 !important;
+    color: rgb(55, 65, 81);
+    font-family: "Rethink Sans";
+}
+.ant-select-selection-item {
+    font-size: 16px !important;
+    font-weight: 500;
+}
+.ant-select-selector:hover {
+    border-color: #3c50e0 !important;
+}
+.ant-select-selector:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.ant-select-selector {
+    border-radius: 4px !important;
+}
+
+.ant-table-row-expand-icon {
+    border-radius: 2px !important;
+    margin-top: 5px !important;
+}
+.custom-table .ant-table-row-expand-icon-cell {
+    vertical-align: middle !important;
+}
+.ant-table-cell {
+    font-size: 16px !important;
+}
+.categoriesTable .ant-table-thead .ant-table-cell {
+    margin-left: 20px !important;
+    padding-left: 42px !important;
+}
+* {
+    font-family: "Sen", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.logo {
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: transparent !important;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #474747;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #7a7a7a;
+}
