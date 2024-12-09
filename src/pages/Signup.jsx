@@ -45,15 +45,15 @@ const SignUp = () => {
   return (
     <>
       <div className="flex items-center w-full flex-col justify-center py-10 pb-20">
-        <div className="rounded-md md:w-[45rem] shadow p-5 md:p-8 bg-gray-800 border-gray-600 dark:border-strokedark dark:bg-boxdark">
+        <div className="rounded-md w-full md:w-[45rem] shadow p-5 md:p-8 bg-gray-800 border-gray-600 dark:border-strokedark dark:bg-boxdark">
           <div className="flex flex-wrap items-center">
             <div className="w-full dark:border-strokedark ">
               <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
                 <span className="mb-1.5 block font-medium text-green-500">Start for free</span>
                 <h2 className="mb-9 text-2xl font-bold   sm:text-title-xl2">
                   Sign Up to{' '}
-                  <span className="text-blue/95 font-semibold text-green-500">
-                    StarCommerce
+                  <span className="text-purple/95 font-semibold text-green-500">
+                    STARCASH
                   </span>
                 </h2>
 

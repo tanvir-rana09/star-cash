@@ -7,6 +7,7 @@ import { GiTakeMyMoney } from 'react-icons/gi';
 import { useAuth } from '../../../context/useAuth';
 import Logo from '../../../Common/Logo';
 import Button from '../Buttons/Button';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
 	const { isAuthenticated, user } = useAuth();
@@ -38,8 +39,12 @@ const Header = (props) => {
 					</div> : <div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
 						<Logo />
 						<div className='space-x-4'>
+							<Link to={'/signin'}>
 							<Button variant='' className='border border-gray-600 px-6'>Sign in</Button>
+							</Link>
+							<Link to={'/signup'}>
 							<Button variant='primary' className='px-6 bg-green-500 hover:bg-green-600'>Sign up</Button>
+							</Link>
 						</div>
 					</div>
 			}
