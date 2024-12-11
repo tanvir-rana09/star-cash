@@ -4,7 +4,7 @@ import useApi from '../utils/useApi';
 import { AuthContext } from './AuthContext';
 
 export const AuthProvider = ({ children }) => {
-	const { callApi } = useApi('/auth/profile', 'GET');
+	const { callApi } = useApi('/profile', 'GET');
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);

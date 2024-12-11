@@ -6,10 +6,10 @@ const NoneProtectedRoute = ({ children }) => {
 	const user = getLocalStorageItem('user')
 
 	if (token && user?.role == 'user') {
-		return <Navigate to="/" replace />;
+		return <Navigate to="/earn" replace />;
 	}
 	if (token && user?.role == 'admin') {
-		return <Navigate to="/admin" replace />;
+		return <Navigate to="/earn" replace />;
 	}
 
 	return children;

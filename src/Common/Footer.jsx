@@ -20,34 +20,34 @@ const [email,setEmail]=useState();
             </h5>
             <div className="mt-6 lg:mb-0 mb-6 flex items-center gap-3">
               <button
-                className="bg-gray-100 text-black shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2"
+                className="bg-gray-700 text-gray-400 hover:bg-black duration-300 hover:text-white shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
                 <FaXTwitter />
               </button>
               <button
-                className="bg-gray-100 text-highlight shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2"
+                className="bg-gray-700 text-gray-400 hover:bg-blue-500 duration-300 hover:text-white shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
                 <FaLinkedin />
 
               </button>
               <button
-                className="bg-gray-100 text-highlight shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2"
+                className="bg-gray-700 text-gray-400 hover:bg-blue-500 duration-300 hover:text-white shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
                 <FaFacebook />
 
               </button>
               <button
-                className="bg-gray-100 text-black shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2"
+                className="bg-gray-700 text-gray-400 hover:bg-black duration-300 hover:text-white shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
                 <FaGithub />
 
               </button>
             </div>
-            <div className="overflow-hidden mt-8 outline-none border-2 border-gray-400 focus:border-green-500 rounded-full  flex">
+            <div className="overflow-hidden mt-8 outline-none border-2 border-gray-700 focus:border-green-500 rounded-full  flex">
               <input
               onChange={(e)=>setEmail(e.target.value)}
               value={email}

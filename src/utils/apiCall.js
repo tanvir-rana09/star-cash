@@ -1,5 +1,6 @@
 import axios from "axios";
 import { getLocalStorageItem } from "./setWithExpire";
+import { toast } from "react-toastify";
 
 // Create an Axios instance with the base URL
 const apiClient = axios.create({
@@ -45,7 +46,11 @@ const apiCall = async (endpoint, method, data = null, config = null) => {
         const dat = await response.data;
         return dat;
     } catch (error) {
-        // Handle errors here (e.g., log or throw)
+        if (error?.status == 401) {
+            localStorage.removeItem('token');
+            localStorage.removeItem("user");
+            toast.error("your token expired please login");
+        }
         console.error("API call error:", error);
         throw error; // Re-throw the error for further handling
     }

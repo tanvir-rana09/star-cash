@@ -14,8 +14,8 @@ const Button = ({
 
   // Variant-specific styles
   const variantStyles = {
-    primary: 'bg-blue-500 hover:bg-blue disabled:bg-blue-500',
-    secondary: 'bg-gray-600 hover:bg-gray-700 disabled:bg-gray-400',
+    primary: 'bg-green-500 hover:bg-green-600 disabled:bg-green-500',
+    secondary: 'bg-gray-800 hover:bg-green-500 disabled:bg-gray-400',
     third: 'bg-purple/95 hover:bg-purple disabled:bg-gray-400',
     danger: 'bg-red-600 hover:bg-red-700 disabled:bg-red-400',
   };

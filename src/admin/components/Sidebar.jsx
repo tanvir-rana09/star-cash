@@ -3,14 +3,13 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useApi from '../../utils/useApi';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../context/useAuth';
-import { GiTakeMyMoney } from 'react-icons/gi';
-import {  MdOutlineLocalOffer } from 'react-icons/md';
+import {  MdOutlineLeaderboard} from 'react-icons/md';
 import { FaSackDollar } from 'react-icons/fa6';
 import { FaHistory } from 'react-icons/fa';
-import { SiGoogletasks } from 'react-icons/si';
 import { HiOutlineCurrencyDollar } from 'react-icons/hi2';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
 import Logo from '../../Common/Logo';
+import { AiOutlineUser } from 'react-icons/ai';
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const { pathname } = useLocation();
@@ -70,11 +69,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   };
 
   const menuItems = [
-    { to: '/', label: 'Earn', icon: <FaSackDollar size={15} /> },
-    { to: '/history', label: 'History', icon: <FaHistory size={15} /> },
-    { to: '/offers', label: 'Offers', icon: <MdOutlineLocalOffer size={15} /> },
-    { to: '/surveys', label: 'Surveys', icon: <SiGoogletasks size={15} /> },
-    { to: '/withdraw', label: 'Withdraw', icon: <HiOutlineCurrencyDollar size={18} /> },
+    { to: '/earn', label: 'Earn', icon: <FaSackDollar size={15} /> },
+    { to: '/history', label: 'Earings History', icon: <FaHistory size={15} /> },
+    { to: '/profile', label: 'Profile', icon: <AiOutlineUser size={19} /> },
+    { to: '/leaderboard', label: 'Leaderboard', icon: <MdOutlineLeaderboard size={18} /> },
+    { to: '/withdraw', label: 'Withdraw', icon: <HiOutlineCurrencyDollar size={20} /> },
   ];
 
   const renderMenuItems = () =>
@@ -95,13 +94,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <aside
       ref={sidebar}
-      className={`${!loading ? 'absolute' : ''} left-0 text-white top-0 pt-10 z-10 flex h-screen w-[17rem] flex-col overflow-y-hidden bg-sidebar duration-300 ease-linear lg:static lg:translate-x-0 ${
+      className={`${!loading ? 'absolute' : ''} left-0 text-white  top-0 pt-10 z-10 flex h-screen w-[17rem] flex-col overflow-y-hidden bg-sidebar duration-300 ease-linear lg:static lg:translate-x-0 ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
       {/* Sidebar Header */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
+        <div className='-mt-5'>
         <Logo/>
+        </div>
+
         <button
           ref={trigger}
           onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -135,7 +137,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <h3 className="mb-4 ml-4 text-sm font-semibold">OTHERS</h3>
             <button
               onClick={logout}
-              className="group bg-highlight w-full relative flex items-center gap-2 rounded justify-center py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+              className="group bg-red-500 hover:bg-red-600 w-full relative flex items-center gap-2 rounded justify-center py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
             >
               <RiLogoutCircleRLine />
               Log out

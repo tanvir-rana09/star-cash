@@ -32,7 +32,7 @@ const SignIn = () => {
       setIsAuthenticated(true)
       if (data?.user?.role == 'admin') {
         setIsAdmin(true);
-        navigate('/admin/products')
+        navigate('/earn')
       } else navigate('/')
 
     } else {
@@ -129,7 +129,7 @@ const SignIn = () => {
                     <Button
                       loading={loading}
                       type="submit"
-                      className="w-full cursor-pointer rounded border-green-500 bg-green-500 p-4 py-3 text-white transition hover:bg-opacity-90"
+                      className="w-full cursor-pointer duration-300 rounded border-green-500 bg-green-500 p-4 py-3 text-white transition hover:bg-green-600"
                     >
                       Sign in
                     </Button>

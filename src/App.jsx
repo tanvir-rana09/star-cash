@@ -9,7 +9,7 @@ import Footer from './Common/Footer';
 
 function App() {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
-	const { loading,isAuthenticated, user } = useAuth();
+	const { loading, isAuthenticated, user } = useAuth();
 	if (loading) {
 		return <Loader />;
 	}
@@ -30,11 +30,13 @@ function App() {
 
 					{/* Main Content */}
 					<main>
-						<div className="mx-auto p-4 md:p-6 2xl:p-10 bg-main">
+						<div className="mx-auto p-4 md:p-6 2xl:p-10 bg-main ">
 							<Outlet />
 						</div>
 					</main>
-					<Footer />
+					<div className=''>
+						<Footer />
+					</div>
 				</div>
 
 			</div>

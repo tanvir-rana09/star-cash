@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
 import { HiMiniBars3BottomLeft } from 'react-icons/hi2';
 import DropdownUser from './UserProfile';
-import { IoMdNotifications } from 'react-icons/io';
-import { MdAccountBalanceWallet } from 'react-icons/md';
-import { GiTakeMyMoney } from 'react-icons/gi';
 import { useAuth } from '../../../context/useAuth';
 import Logo from '../../../Common/Logo';
 import Button from '../Buttons/Button';
 import { Link } from 'react-router-dom';
+import Notification from './Notification';
+import { getLocalStorageItem } from '../../../utils/setWithExpire';
+import { ImCoinDollar } from 'react-icons/im';
 
 const Header = (props) => {
-	const { isAuthenticated, user } = useAuth();
+	const { isAuthenticated,user } = useAuth();
+	const localUser = getLocalStorageItem("user");
 	return (
 		<header className="sticky top-0 z-[999] flex w-full bg-sidebar shadow-md border-b border-gray-700 text-white">
 			{
@@ -32,18 +33,18 @@ const Header = (props) => {
 							<Logo />
 						</div>
 						<div className="flex items-center justify-end w-full ">
-							<div className='cursor-pointer flex items-center gap-2 bg-gray-700 rounded px-3 py-2 mr-3'><MdAccountBalanceWallet className='text-green-500' size={20} /> $500</div>
-							<DropdownUser />
-							<IoMdNotifications size={40} className='ml-4 hover:bg-gray-700 p-2 duration-300 rounded-full cursor-pointer' />
-						</div>
+							<div className='cursor-pointer flex items-center gap-2 bg-gray-700 rounded px-3 py-2 mr-3'><ImCoinDollar className='text-yellow-500' size={18} /> {localUser?.points}</div>
+							<DropdownUser /> 
+							<Notification/> 
+						</div> 
 					</div> : <div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
 						<Logo />
 						<div className='space-x-4'>
 							<Link to={'/signin'}>
-							<Button variant='' className='border border-gray-600 px-6'>Sign in</Button>
+								<Button variant='' className='border border-gray-600 px-6'>Sign in</Button>
 							</Link>
 							<Link to={'/signup'}>
-							<Button variant='primary' className='px-6 bg-green-500 hover:bg-green-600'>Sign up</Button>
+								<Button variant='primary' className='px-6 bg-green-500 hover:bg-green-600'>Sign up</Button>
 							</Link>
 						</div>
 					</div>

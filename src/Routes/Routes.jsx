@@ -7,11 +7,11 @@ import SignIn from '../pages/Signin.jsx';
 import Home from '../pages/Home.jsx';
 import SignUp from '../pages/Signup.jsx';
 import Histroy from '../pages/Histroy.jsx';
-import Offers from '../pages/Offers.jsx';
-import Survey from '../pages/Survey.jsx';
+import Offers from '../pages/Leaderboard.jsx';
 import Withdraw from '../pages/Withdraw.jsx';
 import Profile from '../pages/Profile.jsx';
 import Earn from '../pages/Earn.jsx';
+import ProfileSettings from '../pages/ProfileSettings.jsx';
 
 const AppRoutes = () => (
 	<AuthProvider>
@@ -23,9 +23,9 @@ const AppRoutes = () => (
 			<Route path='/signup' element={<NoneProtectedRoute><SignUp /></NoneProtectedRoute>} />
 				<Route path="earn" element={<ProtectedRoute><Earn /></ProtectedRoute>} />
 				<Route path='profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-				<Route path='histroy' element={<ProtectedRoute><Histroy /></ProtectedRoute>} />
-				<Route path='offers' element={<ProtectedRoute><Offers /></ProtectedRoute>} />
-				<Route path='survey' element={<ProtectedRoute><Survey /></ProtectedRoute>} />
+				<Route path='profile-settings' element={<ProtectedRoute><ProfileSettings /></ProtectedRoute>} />
+				<Route path='history' element={<ProtectedRoute><Histroy /></ProtectedRoute>} />
+				<Route path='leaderboard' element={<ProtectedRoute><Offers /></ProtectedRoute>} />
 				<Route path='withdraw' element={<ProtectedRoute><Withdraw /></ProtectedRoute>} />
 			</Route>
 
