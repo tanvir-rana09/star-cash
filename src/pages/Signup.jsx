@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import useApi from '../utils/useApi';
 import Button from '../admin/components/Buttons/Button';
 import { Bounce, toast } from 'react-toastify';
+import { LiaUserFriendsSolid } from 'react-icons/lia';
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
@@ -28,8 +29,13 @@ const SignUp = () => {
       console.log(data);
       navigate('/signin');
     }
-
+    if (data?.status == 400) {
+      setApiErrors((prev) => (
+        { ...prev, referral_code: data?.error }
+      ))
+    }
   };
+
 
   useEffect(() => {
     if (error?.data?.errors) {
@@ -70,7 +76,7 @@ const SignUp = () => {
                         className="w-full rounded border-2 border-gray-500 focus:border-green-500 bg-transparent py-2.5 pl-6 pr-10 outline-none  focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input  dark:focus:border-blue"
                       />
 
-                      <span className="absolute right-4 top-4">
+                      <span className="absolute right-4 top-3">
                         <svg
                           className="fill-current"
                           width="22"
@@ -111,7 +117,7 @@ const SignUp = () => {
                         className="w-full rounded border-2 bg-transparent py-2.5 pl-6 pr-10 outline-none border-gray-500 focus:border-green-500 focus-visible:shadow-none "
                       />
 
-                      <span className="absolute right-4 top-4">
+                      <span className="absolute right-4 top-3">
                         <svg
                           className="fill-current"
                           width="22"
@@ -148,7 +154,7 @@ const SignUp = () => {
                         className="w-full rounded border-2 border-stroke bg-transparent py-2.5 pl-6 pr-10  outline-none border-gray-500 focus:border-green-500 "
                       />
 
-                      <span className="absolute right-4 top-4">
+                      <span className="absolute right-4 top-3">
                         <svg
                           className="fill-current"
                           width="22"
@@ -189,7 +195,7 @@ const SignUp = () => {
                         className="w-full rounded border-2 border-stroke bg-transparent py-2.5 pl-6 pr-10  outline-none border-gray-500 focus:border-green-500"
                       />
 
-                      <span className="absolute right-4 top-4">
+                      <span className="absolute right-4 top-3">
                         <svg
                           className="fill-current"
                           width="22"
@@ -214,6 +220,29 @@ const SignUp = () => {
                         apiErrors?.password.includes('confirmation') && (
                           <p className="text-red-500 font-medium text-sm">
                             {apiErrors?.password}
+                          </p>
+                        )}
+                    </div>
+                  </div>
+                  <div className="mb-6">
+                    <label className="mb-2.5 block font-medium  ">
+                      Refer Code <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        {...register('referral_code')}
+                        type="text"
+                        placeholder="Enter refer code"
+                        className="w-full rounded border-2 border-stroke bg-transparent py-2.5 pl-6 pr-10  outline-none border-gray-500 focus:border-green-500"
+                      />
+
+                      <span className="absolute right-4 top-3">
+                        <LiaUserFriendsSolid size={25} className='text-gray-500' />
+                      </span>
+                      {apiErrors?.referral_code &&
+                        (
+                          <p className="text-red-500 font-medium text-sm">
+                            {apiErrors?.referral_code}
                           </p>
                         )}
                     </div>

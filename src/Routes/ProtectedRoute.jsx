@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 
-const ProtectedRoute = ({ children, redirectPath = '/', requireAdmin = true }) => {
+const ProtectedRoute = ({ children, redirectPath = '/', requireAdmin = false }) => {
   const { isAuthenticated, user } = useAuth();
 
 

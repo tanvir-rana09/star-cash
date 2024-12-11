@@ -10,6 +10,8 @@ import { FaHistory } from 'react-icons/fa';
 import { HiOutlineCurrencyDollar } from 'react-icons/hi2';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
+import { Avatar } from 'antd';
+import { UserOutlined } from "@ant-design/icons";
 
 const DropdownUser = () => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -50,7 +52,7 @@ const DropdownUser = () => {
 				<div className='flex items-center  gap-4'>
 					<span className="h-10 w-10 rounded-full overflow-hidden">
 						{
-							admin?.profile_picture ? <img src={admin?.profile_picture} alt="User" /> : <span className="h-10 w-10 bg-gray-300 block animate-pulse rounded-full "></span>
+							admin?.profile_picture ? <img src={admin?.profile_picture} alt="User" /> : <Avatar className="w-full h-full object-cover text-8xl" icon={<UserOutlined className="text-gray-400" />} />
 						}
 					</span>
 					<span className="hidden text-left lg:block ">

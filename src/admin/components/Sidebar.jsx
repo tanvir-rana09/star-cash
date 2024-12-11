@@ -70,7 +70,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 
   const menuItems = [
     { to: '/earn', label: 'Earn', icon: <FaSackDollar size={15} /> },
-    { to: '/history', label: 'Earings History', icon: <FaHistory size={15} /> },
+    { to: '/history', label: 'History', icon: <FaHistory size={15} /> },
     { to: '/profile', label: 'Profile', icon: <AiOutlineUser size={19} /> },
     { to: '/leaderboard', label: 'Leaderboard', icon: <MdOutlineLeaderboard size={18} /> },
     { to: '/withdraw', label: 'Withdraw', icon: <HiOutlineCurrencyDollar size={20} /> },

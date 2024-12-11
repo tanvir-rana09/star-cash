@@ -1,8 +1,7 @@
-import { Input, Row, Col, Card, Avatar } from "antd";
+import { Row, Col, Card, Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { useForm } from "react-hook-form";
 import { LuPencilLine } from "react-icons/lu";
-import { FaSave } from "react-icons/fa";
 import { MdOutlineUpdate } from "react-icons/md";
 import { getLocalStorageItem } from "../utils/setWithExpire";
 import InputField from "../admin/components/Inputs/Input";
@@ -52,8 +51,7 @@ const ProfileSettings = () => {
             <div className="mb-6 flex items-center gap-2">
               <div className="relative border-4 border-gray-600 rounded-full h-[6rem] w-[6rem] ">
                 {
-                  localUser?.profile_picture ? <img className="rounded-full w-full h-full object-cover" src={previews || localUser?.profile_picture} alt="profile" /> :
-                    <Avatar size={100} icon={<UserOutlined className="text-gray-400" />} />
+                  (localUser?.profile_picture || previews) ? <img className="rounded-full w-full h-full object-cover" src={previews || localUser?.profile_picture} alt="profile" /> : <Avatar className="w-full h-full object-cover text-8xl" icon={<UserOutlined className="text-gray-400 text-5xl" />} />
                 }
                 <div className="absolute bottom-0 right-1 bg-gray-700 p-1 rounded-full border">
                   <input onChange={(e) => handleFileChange(e.target.files[0])} type="file" name="profile_picture" id="profile_picture" hidden />

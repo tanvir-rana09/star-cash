@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Modal } from 'antd';
+import { Modal, Table } from 'antd';
 import Button from '../admin/components/Buttons/Button';
 import InputField from '../admin/components/Inputs/Input';
 import bkash from '../assets/bkash-logo-png.png'
@@ -9,12 +9,14 @@ import { FaBitcoin, FaEthereum } from 'react-icons/fa6';
 import { BsCoin } from 'react-icons/bs';
 import { SiLitecoin } from 'react-icons/si';
 import { useForm } from 'react-hook-form';
+import withdrawColumns from '../columns/Withdraw';
 
 const Withdraw = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMethod, setSelectedMethod] = useState(null);
   const [paymentDetails, setPaymentDetails] = useState('');
   const [withdrawAmount, setWithdrawAmount] = useState('');
+
   const { control } = useForm()
   const localMethods = [
     { name: 'Bkash', type: 'Payment', minAmount: 5, icon: bkash },
@@ -69,8 +71,55 @@ const Withdraw = () => {
     handleCloseModal();
   };
 
+
+  const withdrawData = [
+    {
+      key: 1,
+      created_at: '2024-12-01',
+      amount: '$100.00',
+      method: 'PayPal',
+      address: 'example@gmail.com',
+      status: 'pending',
+    },
+    {
+      key: 2,
+      created_at: '2024-12-02',
+      amount: '$250.00',
+      method: 'Bank Transfer',
+      address: 'Bank of America, Account #123456789',
+      status: 'successful',
+    },
+    {
+      key: 3,
+      created_at: '2024-12-03',
+      amount: '$75.00',
+      method: 'Crypto',
+      address: '0xabc12345def67890',
+      status: 'canceled',
+    },
+    {
+      key: 4,
+      created_at: '2024-12-04',
+      amount: '$500.00',
+      method: 'PayPal',
+      address: 'user2@gmail.com',
+      status: 'pending',
+    },
+    {
+      key: 5,
+      created_at: '2024-12-05',
+      amount: '$300.00',
+      method: 'Bank Transfer',
+      address: 'Wells Fargo, Account #987654321',
+      status: 'successful',
+    },
+  ];
+
+
+
+
   return (
-    <div className="w-full max-w-7xl mx-auto space-y-10">
+    <div className="w-full max-w-7xl mx-auto space-y-10 py-20">
       <div className=' pb-5 text-gray-400'>
         <h1 className="text-2xl pb-2 text-gray-300">Withdraw</h1>
         <p>Withdraw your StarCash earnings using the methods listed below.</p>
@@ -144,6 +193,17 @@ const Withdraw = () => {
           onChange={(e) => setPaymentDetails(e.target.value)}
         />
       </Modal>
+      <div>
+        <h1 className="text-2xl  pb-2 mb-5 text-gray-300">History</h1>
+        <div>
+          <Table
+            scroll={{ x: true }}
+            columns={withdrawColumns}
+            dataSource={withdrawData}
+            rowHoverable={false}
+          />
+        </div>
+      </div>
     </div>
   );
 };

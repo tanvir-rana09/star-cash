@@ -33,7 +33,7 @@ const InputField = forwardRef(({
             ref={ref}
             // onChange={onChange}
             placeholder={placeholder}
-            className={`w-full rounded placeholder:text-[15px] text-gray-300 placeholder:text-gray-400 placeholder:font-normal placeholder:tracking-wider border border-gray-600 bg-transparent py-3 pl-3 pr-5 outline-none focus:border-green-500 focus-visible:shadow-none text-gray-700 ${error ? 'border-red-500' : 'border-gray-300'} ${className}`}
+            className={`w-full rounded placeholder:text-[15px] text-gray-300 placeholder:text-gray-400 placeholder:font-normal placeholder:tracking-wider border border-gray-600 bg-transparent py-3 pl-3 pr-5 outline-none focus:border-green-500 focus-visible:shadow-none  ${error ? 'border-red-500' : 'border-gray-300'} ${className}`}
           />
         );
     }

@@ -6,11 +6,12 @@ import { ImCoinDollar } from "react-icons/im";
 import { FaCircleCheck } from "react-icons/fa6";
 import { GrLogout } from "react-icons/gr";
 import { RiCopperCoinLine } from "react-icons/ri";
+import Histroy from "./Histroy";
 
 const Profile = () => {
   const localUser = getLocalStorageItem("user")
   return (
-    <div className=" w-full max-w-7xl mx-auto">
+    <div className=" w-full max-w-7xl mx-auto py-10">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">My Profile</h1>
         <Link to={'/profile-settings'} className="text-green-400 text-2xl hover:text-green-300">
@@ -19,11 +20,11 @@ const Profile = () => {
       </div>
 
       <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
-        <div className="flex items-center mb-6 bg-gray-800 rounded p-5 mt-6 grid-cols-2 ">
+        <div className="flex items-center bg-gray-800 rounded p-5 mt-6 grid-cols-2 ">
           <div className="relative border-4 border-gray-600 rounded-full h-[8rem] w-[8rem] ">
             {
               localUser?.profile_picture ? <img className="rounded-full w-full h-full object-cover" src={localUser?.profile_picture} alt="profile" /> :
-                <Avatar size={100} icon={<UserOutlined className="text-gray-400" />} />
+                <Avatar className="w-full h-full object-cover text-8xl" icon={<UserOutlined className="text-gray-400 text-5xl" />} />
             }
           </div>
           <div className="ml-4 space-y-2">
@@ -33,7 +34,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className=" bg-gray-800 rounded p-4 mt-6 grid grid-cols-2 gap-4">
+        <div className=" bg-gray-800 rounded p-8 mt-6 grid grid-cols-2 gap-4">
           <div className="flex items-center gap-3">
             <ImCoinDollar className="bg-green-900 rounded p-2.5 text-green-500" size={50}/>
             <div className="flex flex-col items-start">
@@ -63,7 +64,8 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
+      <Histroy/>
     </div>
   )
 }

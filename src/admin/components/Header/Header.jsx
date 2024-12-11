@@ -10,7 +10,7 @@ import { getLocalStorageItem } from '../../../utils/setWithExpire';
 import { ImCoinDollar } from 'react-icons/im';
 
 const Header = (props) => {
-	const { isAuthenticated,user } = useAuth();
+	const { isAuthenticated } = useAuth();
 	const localUser = getLocalStorageItem("user");
 	return (
 		<header className="sticky top-0 z-[999] flex w-full bg-sidebar shadow-md border-b border-gray-700 text-white">
